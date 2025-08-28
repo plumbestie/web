@@ -1,0 +1,270 @@
+@charset "utf-8";
+
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none; color: #333;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  color: #333;
+}
+
+.hide {
+  display: none;
+}
+
+.clearfix:after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+
+/* wrap */
+.wrap {
+  width: 1200px; height: 700px;
+  margin: 0 auto;
+}
+
+header {
+  position: relative;
+  width: 100%; height: 100px;
+  background: #ccc;
+}
+
+h1 {
+  width: 200px; height: 100%;
+  float: left;
+}
+
+h1>a {
+  display: block;
+  width: 100%; height: 100%;
+  font-size: 0;
+  background: url(../images/header/logo.svg) no-repeat center/contain;
+}
+
+.nav_full {
+  position: absolute;
+  top: 100px; left: 0;
+  width: 100%; height: 200px;
+  background: #888;
+  display: none;
+  z-index: 10;
+}
+
+nav {
+  float: right;
+  margin-top: 50px;
+}
+
+.gnb {
+  width: 600px; height: 50px;
+  line-height: 50px; text-align: center;
+  font-weight: bold;
+  background: #999;
+}
+
+.gnb li a {
+  display: block;
+  width: 150px; height: 50px;
+  background: #888;
+}
+
+.gnb li a:hover {
+  background: rgb(133, 133, 224);
+}
+
+.gnb>li {
+  position: relative;
+  width: 150px;
+  float: left;
+}
+
+.gnb>li>a {
+  background: #333; color: #fff;
+}
+
+.gnb>li>ul {
+  position: absolute;
+  top: 50px; right: 0;
+  width: 100%; height: 200px;
+  background: #888;
+  display: none;
+  z-index: 10;
+}
+
+main {
+  width: 100%; height: 500px;
+}
+
+.fade_slider_section {
+  width: 100%; height: 300px;
+}
+
+.fade_slider {
+  position: relative;
+  width: 100%; height: 100%;
+}
+
+.fade_slider>div {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+.fade_slider>div>p {
+  position: absolute;
+  top: 200px; left: 40%;
+  background: #333; color: #fff; opacity: 0.7;
+  font-weight: bolder; font-size: x-large;
+  text-align: center; 
+  padding: 10px 30px;
+}
+
+.fade_slider>div:nth-child(1) {
+  background: url(../images/slide/img1.jpg) no-repeat center/cover;
+  z-index: 4;
+}
+
+.fade_slider>div:nth-child(2) {
+  background: url(../images/slide/img2.jpg) no-repeat center/cover;
+  z-index: 3;
+}
+
+.fade_slider>div:nth-child(3) {
+  background: url(../images/slide/img3.jpg) no-repeat center/cover;
+  z-index: 2;
+}
+
+.content_wrap {
+  display: flex;
+  width: 100%; height: 200px;
+}
+
+.notice_wrap {
+  width: 33.3%; height: 100%; 
+  line-height: 40px;
+}
+
+.notice_wrap>h3 {
+  border-bottom: 2px solid palegoldenrod;
+  padding: 0 10px;
+}
+
+.notice_wrap>div>a {
+  display: block;
+  padding: 0 10px;
+}
+
+.notice_wrap>div>a:hover {
+  font-weight: bold;
+}
+
+.notice_wrap>div>a:nth-child(2) {
+  background: palegoldenrod;
+}
+
+.notice_wrap>div>a:nth-child(4) {
+  background: palegoldenrod;
+}
+
+.notice_wrap>div>a>span:nth-child(2) {
+  float: right;
+}
+
+.gallery_wrap {
+  width: 33.3%; height: 100%; 
+  text-align: center;
+}
+
+.gallery_wrap>h3 {
+  text-align: left;
+  line-height: 40px;
+  border-bottom: 2px solid palegoldenrod;
+  padding: 0 10px;
+}
+
+.gallery_wrap>img {
+  margin: 15px;
+}
+
+.gallery_wrap>img:hover {
+  opacity: 0.7;
+}
+
+.direct_wrap {
+  width: 33.3%; height: 100%; 
+  background: url(../images/contents/shortcut.jpg) no-repeat center/contain;
+}
+
+.direct_wrap:hover {
+  opacity: 0.7;
+}
+
+.direct_wrap>p>a {
+  display: block;
+  margin: 30%;
+  text-align: center; font-weight: bolder; font-size: large; opacity: 0.7;
+  background: #333; color: #fff;
+}
+
+footer {
+  display: flex;
+  width: 100%; height: 100px;
+  background: #888;
+}
+
+.footer01 {
+  width: 80% ; height: 100%;
+  text-align: center;
+  padding: 40px 0;
+  font-size: 30px;
+}
+
+.footer02 {
+  width: 20%; height: 100%;
+  text-align: center;
+}
+
+.footer02>img {
+  margin: 5px;
+}
+
+.footer02>img:hover {
+  opacity: 0.7;
+}
+
+.footer02>select {
+  width: 80%;
+}
+
+.pop_up {
+  position: fixed;
+  top: 40%; left: 40%;
+  width: 350px; height: 200px;
+  background: #fff; color: #333;
+  text-align: center;
+  padding: 20px;
+  z-index: 10;
+  display: none;
+}
+
+.pop_up>h3 {
+  margin-bottom: 20px;
+}
+
+.pop_up>button {
+  position: absolute;
+  width: 60px; height: 20px;
+  border: none;
+  bottom: 20px; right: 20px;
+  cursor: pointer;
+}
