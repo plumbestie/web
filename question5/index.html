@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>세계맛기행축제</title>
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/jquery-1.12.3.js"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1><a href="#">세계맛기행축제</a></h1>
+      <nav>
+        <ul class="gnb">
+          <li>
+            <a href="#">주최소개</a>
+            <ul>
+              <li><a href="#">인사말</a></li>
+              <li><a href="#">명인</a></li>
+              <li><a href="#">오시는길</a></li>
+            </ul>
+          </li>
+          <!-- 주최소개 -->
+          <li>
+            <a href="#">행사안내</a>
+            <ul>
+              <li><a href="#">요리경연대회</a></li>
+              <li><a href="#">전시참가</a></li>
+              <li><a href="#">참가신청</a></li>
+            </ul>
+          </li>
+          <!-- 행사안내 -->
+          <li>
+            <a href="#">홍보마당</a>
+            <ul>
+              <li><a href="#">축제소식</a></li>
+              <li><a href="#">보도자료</a></li>
+              <li><a href="#">레시피</a></li>
+            </ul>
+          </li>
+          <!-- 홍보마당 -->
+          <li>
+            <a href="#">회원마당</a>
+            <ul>
+              <li><a href="#">Q&A</a></li>
+              <li><a href="#">레시피</a></li>
+              <li><a href="#">공지사항</a></li>
+            </ul>
+          </li>
+          <!-- 회원마당 -->
+        </ul>
+      </nav>
+    </header>
+    <div class="right_wrap">
+      <main>
+        <section class="auto_slider_section">
+          <h2 class="hide">auto_slider</h2>
+          <div class="auto_slider">
+            <div>
+              <p>세계맛기행 축제 시작</p>
+            </div>
+            <!-- 01 -->
+            <div>
+              <p>유기농 재료로 음식 만들기</p>
+            </div>
+            <!-- 02 -->
+            <div>
+              <p>신선한 재료와 건강 이야기</p>
+            </div>
+            <!-- 03 -->
+          </div>
+        </section>
+        <div class="content_wrap">
+          <div class="notice_wrap">
+            <h3>공지사항</h3>
+            <a href="#" class="click_popup">
+              <span>세계 맛기행 관련 공지1</span>
+              <span>2022.03.01</span>
+            </a>
+            <!-- 01 -->
+            <a href="#">
+              <span>세계 맛기행 관련 공지2</span>
+              <span>2022.03.01</span>
+            </a>
+            <!-- 02 -->
+            <a href="#">
+              <span>세계 맛기행 관련 공지3</span>
+              <span>2022.03.01</span>
+            </a>
+            <!-- 03 -->
+            <a href="#">
+              <span>세계 맛기행 관련 공지4</span>
+              <span>2022.03.01</span>
+            </a>
+            <!-- 04 -->
+          </div>
+          <div class="gallery_wrap">
+            <h3>갤러리</h3>
+            <img src="images/contents/gallery1.jpg" alt="img01">
+            <img src="images/contents/gallery2.jpg" alt="img02">
+            <img src="images/contents/gallery3.jpg" alt="img03">
+          </div>
+          <div class="direct">
+            <a href="#"><p>바로가기</p></a>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="footer01"></div>
+        <div class="footer02">
+          <div>
+            <a href="#"><p>하단메뉴1</p></a>
+            <a href="#"><p>하단메뉴2</p></a>
+            <a href="#"><p>하단메뉴3</p></a>
+          </div>
+          <p>COPYRIGHTⓒ by WEBDESIGN. ALL RIGHTS RESERVED</p>
+        </div>
+      </footer>
+    </div>
+    <div class="pop_up">
+      <h3>맛기행 축제 알림</h3>
+      <p>이탈리아 음식과 함께 이탈리아 여행을 떠나보세요.
+        이번 맛기행 축제에서는 이탈리아 전통 와인과 식빵을 중심으로 
+        여러 이탈리아 음식을 선보입니다.
+        이탈리아 전통 음식의 비법과 유래에 대한 설명회도 참여해보세요.
+        축제에 참가하신 분들께는 작은 기념품도 마련되어 있습니다. </p>
+      <button type="button" class="close_btn">닫기</button>
+    </div>
+  </div>
+  <script>
+    $(function () {
+      //nav
+      $('.gnb>li').mouseover(function () {
+        $(this).children('ul').stop().slideDown(500)
+      })
+      $('.gnb>li').mouseout(function () {
+        $(this).children('ul').stop().slideUp(500)
+      })
+
+      //auto_slider
+      let n = 0;
+      function autoSlide() {
+        setInterval(function () {
+          n++;
+          if (n === 3) {
+            n = 0;
+          }
+          $('.auto_slider>div').eq(n - 1).css({ 'left': '0' }).stop().animate({ 'left': '-100%' }, 500)
+          $('.auto_slider>div').eq(n).css({ 'left': '100%' }).stop().animate({ 'left': '0%' }, 500)
+        }, 2000)
+      }
+
+      //pop_up
+      $('.click_popup').click(function(){
+        $('.pop_up').show()
+      })
+      $('.close_btn').click(function(){
+        $('.pop_up').hide()
+      })
+      autoSlide()
+    });//
+  </script>
+</body>
+
+</html>
