@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>코리아은행</title>
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/jquery-1.12.3.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1><a href="#">코리아은행</a></h1>
+      <nav>
+        <h2 class="hide">navigation</h2>
+        <ul class="gnb">
+          <li>
+            <a href="#">개인</a>
+            <ul>
+              <li><a href="#">조회</a></li>
+              <li><a href="#">이체</a></li>
+              <li><a href="#">공과금</a></li>
+              <li><a href="#">예금/신탁</a></li>
+            </ul>
+          </li>
+          <!-- 개인 -->
+          <li>
+            <a href="#">기업</a>
+            <ul>
+              <li><a href="#">조회</a></li>
+              <li><a href="#">이체</a></li>
+              <li><a href="#">전자결제</a></li>
+              <li><a href="#">수표/어음</a></li>
+            </ul>
+          </li>
+          <!-- 기업 -->
+          <li>
+            <a href="#">금융상품</a>
+            <ul>
+              <li><a href="#">저축상품</a></li>
+              <li><a href="#">대출상품</a></li>
+              <li><a href="#">투자상품</a></li>
+            </ul>
+          </li>
+          <!-- 금융상품 -->
+          <li>
+            <a href="#">카드</a>
+            <ul>
+              <li><a href="#">카드정보</a></li>
+              <li><a href="#">카드신청</a></li>
+              <li><a href="#">이용내역조회</a></li>
+            </ul>
+          </li>
+          <!-- 카드 -->
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="auto_slider_section">
+        <h2 class="hide">auto_slider_section</h2>
+        <div class="auto_slider">
+          <div>
+            <p>대표 은행, 코리아은행</p>
+          </div>
+          <!-- 01 -->
+          <div>
+            <p>차원이 다른 코리아은행</p>
+          </div>
+          <!-- 02 -->
+          <div>
+            <p>더욱 쉬운 오픈뱅킹 서비스</p>
+          </div>
+          <!-- 03 -->
+        </div>
+      </section>
+      <div class="content_wrap">
+        <div class="tab_wrap">
+          <ol class="tab">
+            <li><a href="#notice">공지사항</a></li>
+            <li><a href="#gallery">갤러리</a></li>
+          </ol>
+          <div id="notice">
+            <a href="#" class="click_popup">
+              <span>대한은행 홈페이지 개편 안내</span>
+              <b>2022.03.01</b>
+            </a>
+            <!-- 01 -->
+            <a href="#">
+              <span>종합생활금융 플랫폼 코리아은행</span>
+              <b>2022.03.01</b>
+            </a>
+            <!-- 02 -->
+            <a href="#">
+              <span>시스템 정기 점검 안내	</span>
+              <b>2022.03.01</b>
+            </a>
+            <!-- 03 -->
+            <a href="#">
+              <span>오픈뱅킹 앱 사용법 안내</span>
+              <b>2022.03.01</b>
+            </a>
+            <!-- 04 -->
+          </div>
+          <div id="gallery">
+            <img src="images/contents/gallery1.jpg " alt="img01">
+            <img src="images/contents/gallery2.jpg " alt="img02">
+            <img src="images/contents/gallery3.jpg " alt="img03">
+          </div>
+        </div>
+        <div class="banner_wrap">
+          <p>배너</p>
+        </div>
+        <div class="direct_wrap">
+          <p>바로가기</p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer01">
+        <h1><a href="#">logo</a></h1>
+      </div>
+      <div class="footer02">
+        <div>
+          <p><a href="#">하단메뉴1</a></p>
+          <p><a href="#">하단메뉴2</a></p>
+          <p><a href="#">하단메뉴3</a></p>
+        </div>
+        <div>
+          COPYRIGHTⓒ by WEBDESIGN. ALL RIGHTS RESERVED
+        </div>
+      </div>
+    </footer>
+    <div class="pop_up">
+      <h3>코리아은행 기업 서비스 개선 안내</h3>
+      <p>코리아은행에서는 더 나은 금융서비스를 제공하고자 
+        기업 금융서비스를 전면 개편하였습니다.
+        이번 개편을 통해 금융뿐만 아니라 고객 데이터 분석, 
+        비금융 서비스 등을 제공하는 기업 종합금융 플랫폼으로 
+        거듭나게 되었으며, 모든 금융계좌의 통합관리, 
+        자금 수금 및 지급 실행 등 통합자금관리 서비스를 
+        무료로 제공합니다.</p>
+      <button type="button" class="close_btn">닫기</button>
+    </div>
+  </div>
+  <script>
+    $(function(){
+      //nav
+      $('.gnb>li').mouseover(function(){
+        $('.gnb>li>ul').stop().slideDown(500)
+      })
+      $('.gnb>li').mouseout(function(){
+        $('.gnb>li>ul').stop().slideUp(500)
+      })
+
+      //auto_slider
+      let n=0;
+      function autoSlide() {
+        setInterval(function(){
+          n++;
+          if (n===3) {
+            n=0;
+          }
+          $('.auto_slider>div').eq(n-1).css({'left':'0'}).stop().animate({'left':'-100%'},500)
+          $('.auto_slider>div').eq(n).css({'left':'100%'}).stop().animate({'left':'0%'},500)
+        },2000)
+      };
+
+      //tab
+      $('.tab>li>a').click(function(){
+        let linkID = $(this).attr('href')
+        $('.tab_wrap>div').hide()
+        $(linkID).show()
+      })
+
+      //pop_up
+      $('.click_popup').click(function(){
+        $('.pop_up').show()
+      })
+      $('.close_btn').click(function(){
+        $('.pop_up').hide()
+      })
+
+      autoSlide()
+    });
+  </script>
+</body>
+</html>
