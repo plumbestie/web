@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>알뜰 식자재몰</title>
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/jquery-1.12.3.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1><a href="#">logo</a></h1>
+      <div class="nav_full"></div>
+      <nav>
+        <ul class="gnb">
+          <li>
+            <a href="#">과일/채소</a>
+            <ul>
+              <li><a href="#">감자/고구마</a></li>
+              <li><a href="#">버섯 종류</a></li>
+              <li><a href="#">나물 종류</a></li>
+              <li><a href="#">냉장과일</a></li>
+              <li><a href="#">냉동과일</a></li>
+            </ul>
+          </li>
+          <!-- 과일/채소 -->
+          <li>
+            <a href="#">축산</a>
+            <ul>
+              <li><a href="#">돼지고기</a></li>
+              <li><a href="#">소고기</a></li>
+              <li><a href="#">닭/오리고기</a></li>
+              <li><a href="#">계란</a></li>
+            </ul>
+          </li>
+          <!-- 축산 -->
+          <li>
+            <a href="#">수산</a>
+            <ul>
+              <li><a href="#">생선</a></li>
+              <li><a href="#">조개</a></li>
+              <li><a href="#">새우</a></li>
+            </ul>
+          </li>
+          <!-- 수산 -->
+          <li>
+            <a href="#">유제품</a>
+            <ul>
+              <li><a href="#">우유/듀유</a></li>
+              <li><a href="#">버터/마가린</a></li>
+              <li><a href="#">치즈</a></li>
+            </ul>
+          </li>
+          <!-- 유제품 -->
+          <li>
+            <a href="#">할인상품</a>
+            <ul>
+              <li><a href="#">일회용품</a></li>
+              <li><a href="#">과자류</a></li>
+            </ul>
+          </li>
+          <!-- 할인상품 -->
+        </ul>
+      </nav>
+    </header>
+    <div class="right_wrap">
+      <main>
+        <section class="auto_slider_section">
+          <div class="auto_slider">
+            <div>
+              <p>여름맞이 과일 세일</p>
+            </div>
+            <!-- 01 -->
+            <div>
+              <p>스낵류 균일가</p>
+            </div>
+            <!-- 02 -->
+            <div>
+              <p>3만원 이상 구매시 전국 어디든 무료배송</p>
+            </div>
+            <!-- 03 -->
+          </div>
+        </section>
+        <div class="direct">
+          <img src="images/contents/direct/shortcut1.png" alt="img01">
+          <img src="images/contents/direct/shortcut2.png" alt="img02">
+          <img src="images/contents/direct/shortcut3.png" alt="img03">
+          <img src="images/contents/direct/shortcut4.png" alt="img04">
+          <img src="images/contents/direct/shortcut5.png" alt="img05">
+          <img src="images/contents/direct/shortcut6.png" alt="img06">
+          <img src="images/contents/direct/shortcut7.png" alt="img07">
+        </div>
+        <div class="content_wrap">
+          <div class="notice_wrap">
+            <h3>공지사항</h3>
+            <a href="#">
+              <span>공지사항1</span>
+              <span>2024.03.01</span>
+            </a>
+            <!-- 01 -->
+            <a href="#">
+              <span>공지사항2</span>
+              <span>2024.03.01</span>
+            </a>
+            <!-- 02 -->
+            <a href="#">
+              <span>공지사항3</span>
+              <span>2024.03.01</span>
+            </a>
+            <!-- 03 -->
+            <a href="#">
+              <span>공지사항4</span>
+              <span>2024.03.01</span>
+            </a>
+            <!-- 04 -->
+          </div>
+          <div class="gallery_wrap">
+            <h3>갤러리</h3>
+            <div>
+              <img src="images/contents/gallery/gallery1.jpg" alt="img01">
+              <img src="images/contents/gallery/gallery2.jpg" alt="img02">
+              <img src="images/contents/gallery/gallery3.jpg" alt="img03">
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="footer01">
+          <div>
+            <a href="#">하단메뉴1</a>
+            <a href="#">하단메뉴2</a>
+            <a href="#">하단메뉴3</a>
+            <a href="#">하단메뉴4</a>
+            <a href="#">하단메뉴5</a>
+            <a href="#">하단메뉴6</a>
+          </div>
+          <p>COPYRIGHTⓒ by WEBDESIGN. ALL RIGHTS RESERVED</p>
+        </div>
+        <div class="footer02">
+          <select>
+            <option>패밀리사이트1</option>
+            <option>패밀리사이트2</option>
+            <option>패밀리사이트3</option>
+          </select>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script>
+    $(function(){
+      //nav
+      $('.gnb>li').mouseover(function(){
+        $('.gnb>li>ul').stop().slideDown(1000)
+        $('.nav_full').addClass('active')
+      })
+      $('.gnb>li').mouseout(function(){
+        $('.gnb>li>ul').stop().slideUp(500)
+        $('.nav_full').removeClass('active')
+      })
+
+      //auto_slide
+      let n=0;
+      function autoSlide() {
+        setInterval (function(){
+          n++;
+          if (n===3) {
+            n=0;
+          }
+          $('.auto_slider>div').eq(n-1).css({'top':'0'}).stop().animate({'top':'-100%'},500)
+          $('.auto_slider>div').eq(n).css({'top':'100%'}).stop().animate({'top':'0%'},500)
+        },2000)
+      }
+
+      autoSlide()
+    });//
+  </script>
+</body>
+</html>
