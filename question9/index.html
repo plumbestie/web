@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>행복봉사단</title>
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/jquery-1.12.3.js"></script>
+</head>
+
+<body>
+  <div class="top_wrap">
+    <header>
+      <h1><a href="#">logo</a></h1>
+      <nav>
+        <h2 class="hide">navigation</h2>
+        <ul class="gnb">
+          <li>
+            <a href="#">봉사단 소개</a>
+            <ul>
+              <li><a href="#">설립목적</a></li>
+              <li><a href="#">이사진</a></li>
+            </ul>
+          </li>
+          <!-- 봉사단 소개 -->
+          <li>
+            <a href="#">활동 안내</a>
+            <ul>
+              <li><a href="#">말벗봉사</a></li>
+              <li><a href="#">연탄봉사</a></li>
+              <li><a href="#">식사봉사</a></li>
+            </ul>
+          </li>
+          <!-- 활동 안내 -->
+          <li>
+            <a href="#">봉사 신청</a>
+            <ul>
+              <li><a href="#">정기봉사자</a></li>
+              <li><a href="#">지역별</a></li>
+              <li><a href="#">활동</a></li>
+              <li><a href="#">봉사자등록</a></li>
+            </ul>
+          </li>
+          <!-- 봉사 신청 -->
+          <li>
+            <a href="#">알림마당</a>
+            <ul>
+              <li><a href="#">공지사항</a></li>
+              <li><a href="#">문의하기</a></li>
+            </ul>
+          </li>
+          <!-- 알림마당 -->
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="direct">
+        <img src="images/contents/direct/shortcut1.jpg" alt="direct1">
+        <img src="images/contents/direct/shortcut2.jpg" alt="direct2">
+        <img src="images/contents/direct/shortcut3.jpg" alt="direct3">
+      </div>
+      <section class="auto_slider_section">
+        <div class="auto_slider">
+          <div>
+            <p>마음이 따뜻해지는 행동</p>
+          </div>
+          <!-- 01 -->
+          <div>
+            <p>행복의 씨앗을 심는 일</p>
+          </div>
+          <!-- 02 -->
+          <div>
+            <p>이웃과 함께하는 기쁨</p>
+          </div>
+          <!-- 02 -->
+        </div>
+      </section>
+      <div class="banner"></div>
+      <div class="tab_wrap">
+        <ul class="tab">
+          <li><a href="#notice">공지사항</a></li>
+          <li><a href="#gallery">갤러리</a></li>
+        </ul>
+        <div id="notice">
+          <ol>
+            <li>
+              <a href="#" class="click_popup">
+                <span>행복봉사단 23기 모집 공고</span>
+                <span>2024.03.01</span>
+              </a>
+            </li>
+            <!-- 01 -->
+            <li>
+              <a href="#">
+                <span>봄맞이 정기 봉사 안내 </span>
+                <span>2024.03.01</span>
+              </a>
+            </li>
+            <!-- 02 -->
+            <li>
+              <a href="#">
+                <span>행복봉사단 사무국 직원 채용 공고</span>
+                <span>2024.03.01</span>
+              </a>
+            </li>
+            <!-- 03 -->
+            <li>
+              <a href="#">
+                <span>정기 후원자 대상 게릴라 이벤트 안내</span>
+                <span>2024.03.01</span>
+              </a>
+            </li>
+            <!-- 04 -->
+          </ol>
+        </div>
+        <div id="gallery">
+          <img src="images/contents/gallery/gallery1.jpg" alt="img01">
+          <img src="images/contents/gallery/gallery2.jpg" alt="img02">
+          <img src="images/contents/gallery/gallery3.jpg" alt="img03">
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer>
+    <div class="footer01"></div>
+    <div class="footer02">
+      COPYRIGHTⓒ by WEBDESIGN. ALL RIGHTS RESERVED
+    </div>
+    <div class="footer03">
+      <img src="images/footer/sns1.jpg" alt="sns1">
+      <img src="images/footer/sns2.jpg" alt="sns2">
+      <img src="images/footer/sns3.jpg" alt="sns3">
+    </div>
+  </footer>
+  <script>
+    $(function(){
+      //nav
+      $('.gnb>li').mouseover(function(){
+        $(this).children('ul').stop().slideDown(500)
+      })
+      $('.gnb>li').mouseout(function(){
+        $(this).children('ul').stop().slideUp(500)
+      })
+
+      //auto_slider
+      let n=0;
+      function autoSlide() {
+        setInterval (function(){
+          n++;
+          if (n===3) {
+            n=0;
+          }
+          $('.auto_slider>div').eq(n-1).css({'top':'0'}).stop().animate({'top':'-100%'},500)
+          $('.auto_slider>div').eq(n).css({'top':'100%'}).stop().animate({'top':'0%'},500)
+        },2000)
+      }
+
+      //tab_wrap
+      $('.tab>li>a').click(function(){
+        let linkID = $(this).attr('href')
+        $('.tab_wrap>div').hide()
+        $(linkID).show()
+      })
+
+      autoSlide() 
+    });//
+  </script>
+</body>
+
+</html>
